@@ -17,8 +17,13 @@ csv = csv + nl;
 
 // get rest of data
 
+var rows = $('tbody tr', $table).length;
+
+
 // loop rows
 $('tbody tr', $table).each(function(i){
+	if(i > 0 && i < rows) {
+		
 	
 	// loop cells
 	var cell_count = 0;
@@ -55,7 +60,7 @@ $('tbody tr', $table).each(function(i){
 	});
 	
 	csv = csv + nl;
-	
+	}
 });
 
 var data = 'data:application/csv;charset=utf-8,' + encodeURIComponent(csv);
