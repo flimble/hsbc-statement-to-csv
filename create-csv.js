@@ -40,7 +40,12 @@ $('tbody tr', $table).each(function(i){
 				balance = '-' + balance;
 			}
 			csv = csv + '"' + balance + '"';
+		}	
+		else if(cell_count==3) {
+			// this is the paid out
+			var paidOut = $('p', $(this)).html().trim().replace('&nbsp;', '').replace('<b>', '').replace('</b>', '');
 			
+			csv = csv + '"' + balance * -1 + '"';
 		} else if(cell_count!=6) {
 			
 			if($('a', $(this)).length) {
