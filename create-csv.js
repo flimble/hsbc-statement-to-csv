@@ -75,6 +75,6 @@ $('tbody tr', $table).each(function(i){
 
 var data = 'data:application/csv;charset=utf-8,' + encodeURIComponent(csv);
 
-$('body').append('<a href="'+data+'" download="statement-'+statemet_date+'.csv" id="download-statement" style="display: none;">Download</a>');
+$('body').append('<a href="'+data+'" download="statement-'+statement_date+'.csv" id="download-statement" style="display: none;">Download</a>');
 
 $('#download-statement')[0].click();
