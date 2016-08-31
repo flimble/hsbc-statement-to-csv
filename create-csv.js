@@ -4,6 +4,8 @@ var $table = $('table:not(".extPibTable")');
 var statement_date = $('.extContentHighlightPib:eq(1) .extPibRow:eq(0) .hsbcTextRight').html();
 var year = statement_date.substr(statement_date.length-4);
 
+statement_date = new Date(Date.parse(statement_date)).toISOString().split('T')[0];
+
 // build header
 $('thead th', $table).each(function(){
 	if($('a', $(this)).length) {
@@ -73,6 +75,6 @@ $('tbody tr', $table).each(function(i){
 
 var data = 'data:application/csv;charset=utf-8,' + encodeURIComponent(csv);
 
-$('body').append('<a href="'+data+'" download="statement-'+(statement_date.replace(' ', '-'))+'.csv" id="download-statement" style="display: none;">Download</a>');
+$('body').append('<a href="'+data+'" download="statement-'+statemet_date+'.csv" id="download-statement" style="display: none;">Download</a>');
 
 $('#download-statement')[0].click();
