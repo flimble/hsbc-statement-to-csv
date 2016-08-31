@@ -22,7 +22,7 @@ var rows = $('tbody tr', $table).length - 1;
 
 // loop rows
 $('tbody tr', $table).each(function(i){
-	if(i > 0 && i < rows) {
+	if(i > 0 && i != rows) {
 		
 	
 	// loop cells
