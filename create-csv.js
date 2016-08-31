@@ -31,7 +31,9 @@ $('tbody tr', $table).each(function(i){
 		
 		if(cell_count==0) {
 			// this is the date
-			csv = csv + '"' + $('p', $(this)).html().trim() + ' ' + year + '",';
+			var dateString = $('p', $(this)).html().trim() + ' ' + year;
+			var date = new Date(Date.parse(dateString));
+			csv = csv + '"' + date.toISOString().split('T')[0].substr(2) + '",';
 		} else if(cell_count==5) {
 			// this is the balance
 			
