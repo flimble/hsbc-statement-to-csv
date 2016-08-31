@@ -17,7 +17,7 @@ csv = csv + nl;
 
 // get rest of data
 
-var rows = $('tbody tr', $table).length;
+var rows = $('tbody tr', $table).length - 1;
 
 
 // loop rows
