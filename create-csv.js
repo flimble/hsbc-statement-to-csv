@@ -18,7 +18,7 @@ csv = csv + nl;
 // get rest of data
 
 // loop rows
-$('tbody tr', $table).each(function(){
+$('tbody tr', $table).each(function(i){
 	
 	// loop cells
 	var cell_count = 0;
